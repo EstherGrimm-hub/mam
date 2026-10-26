@@ -185,6 +185,191 @@ button {
   }
 }
 
+.site-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-watermark {
+  position: absolute;
+  z-index: 0;
+  top: 18px;
+  right: -18px;
+  color: rgba(241, 232, 212, 0.045);
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 16rem;
+  font-weight: 500;
+  line-height: 0.9;
+  pointer-events: none;
+  user-select: none;
+}
+
+.footer-main,
+.footer-game-wrap,
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-game-wrap {
+  padding-bottom: 34px;
+}
+
+.water-plant {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  gap: 24px;
+  align-items: center;
+  max-width: 650px;
+  margin-left: auto;
+  border: 1px solid rgba(241, 232, 212, 0.2);
+  border-radius: 4px;
+  padding: 17px 22px;
+  background: rgba(241, 232, 212, 0.045);
+}
+
+.water-plant-copy h2 {
+  margin: 7px 0 3px;
+  color: var(--paper);
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.water-plant-copy > p {
+  margin: 0;
+  color: rgba(241, 232, 212, 0.72);
+  font-size: 0.62rem;
+  line-height: 1.6;
+}
+
+.water-plant-score {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  margin-top: 10px;
+}
+
+.water-plant-score span {
+  color: rgba(241, 232, 212, 0.62);
+  font-size: 0.58rem;
+}
+
+.water-plant-score strong {
+  color: #dce8cf;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+}
+
+.water-plant-button {
+  display: inline-flex;
+  min-height: 38px;
+  gap: 7px;
+  align-items: center;
+  margin-top: 12px;
+  border: 1px solid rgba(241, 232, 212, 0.45);
+  border-radius: 99px;
+  padding: 0 13px;
+  background: transparent;
+  color: var(--paper);
+  cursor: pointer;
+  font-size: 0.62rem;
+  touch-action: none;
+  user-select: none;
+}
+
+.water-plant-button:active,
+.water-plant-button[aria-pressed="true"] {
+  background: rgba(220, 232, 207, 0.18);
+}
+
+.water-plant-scene {
+  position: relative;
+  display: grid;
+  min-height: 128px;
+  place-items: end center;
+}
+
+.water-plant-svg {
+  width: 142px;
+  height: 132px;
+}
+
+.water-plant-stem {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transition: transform 180ms ease;
+}
+
+.water-plant-leaf {
+  opacity: 0.15;
+  transform-box: fill-box;
+  transform-origin: bottom left;
+  transition: opacity 220ms ease, transform 260ms ease;
+  scale: 0.7;
+}
+
+.water-plant-leaf.leaf-right,
+.water-plant-leaf.leaf-top {
+  transform-origin: bottom right;
+}
+
+.water-plant-leaf.is-grown {
+  opacity: 1;
+  scale: 1;
+}
+
+.water-plant-growth {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: rgba(241, 232, 212, 0.58);
+  font-size: 0.56rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.water-plant-scene.is-watering .water-plant-svg {
+  animation: plant-sway 900ms ease-in-out infinite alternate;
+}
+
+@keyframes plant-sway {
+  from { transform: rotate(-2deg); }
+  to { transform: rotate(2deg); }
+}
+
+@media (max-width: 640px) {
+  .footer-watermark {
+    top: 40px;
+    right: -15px;
+    font-size: 10rem;
+  }
+
+  .water-plant {
+    grid-template-columns: minmax(0, 1fr) 110px;
+    gap: 8px;
+    margin-left: 0;
+    padding: 14px;
+  }
+
+  .water-plant-svg {
+    width: 104px;
+    height: 110px;
+  }
+
+  .water-plant-scene {
+    min-height: 108px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .water-plant-stem,
+  .water-plant-leaf,
+  .water-plant-scene.is-watering .water-plant-svg {
+    animation: none;
+    transition: none;
+  }
+}
+
 .cart-bump-icon {
   display: grid;
   place-items: center;
@@ -1665,13 +1850,6 @@ button {
   .main-nav.is-open a {
     animation: menu-item-in 380ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
     animation-delay: calc(90ms + var(--menu-index, 0) * 70ms);
-  }
-
-  .main-nav a span {
-    color: #c5d2b6;
-    font-family: var(--font-vietnam), sans-serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
   }
 
   .menu-close {

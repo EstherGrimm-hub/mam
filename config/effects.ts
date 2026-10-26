@@ -10,4 +10,10 @@ export const effects = {
   hotspots: true,
   carousel: true,
   testimonials: false,
+  packageSelector: true,
+  cartToast: true,
+  cartBump: true,
+  stickyProductBar: true,
+  copyFeedback: true,
+  miniGame: true,
 } as const;

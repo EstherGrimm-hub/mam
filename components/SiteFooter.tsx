@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import SocialLinks from "@/components/SocialLinks";
+import WaterPlant from "@/components/WaterPlant";
 
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
+      <div className="footer-watermark" aria-hidden="true">mầm</div>
       <div className="page-shell footer-main">
         <div className="footer-brand">
           <Logo variant="light" height={48} className="footer-logo" />
@@ -12,7 +14,8 @@ export default function SiteFooter() {
           <SocialLinks />
         </div>
         <div className="footer-column">
-          <h2>Khám phá</h2>
+          <h2>Bản đồ trang</h2>
+          <Link href="/">Trang chủ</Link>
           <Link href="/san-pham">Tất cả sản phẩm</Link>
           <Link href="/ve-mam">Câu chuyện mầm</Link>
           <Link href="/tra-cuu-don-hang">Tra cứu đơn hàng</Link>
@@ -30,6 +33,7 @@ export default function SiteFooter() {
           <a href="tel:0900000000">0900 000 000</a>
         </div>
       </div>
+      <div className="page-shell footer-game-wrap"><WaterPlant /></div>
       <div className="page-shell footer-bottom">
         <span>© 2026 mầm Natural Hair Care</span>
         <span>Chăm sóc dịu lành, từ những điều lành.</span>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { PointerEvent, ReactNode } from "react";
-import { effects } from "@/data/effects";
+import { effects } from "@/config/effects";
 
 export default function MagneticLink({
   href,

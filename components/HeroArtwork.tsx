@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type PointerEvent } from "react";
 import Image from "next/image";
-import { effects } from "@/data/effects";
+import { effects } from "@/config/effects";
 
 export default function HeroArtwork({ src, alt }: { src: string; alt: string }) {
   const imageRef = useRef<HTMLImageElement>(null);

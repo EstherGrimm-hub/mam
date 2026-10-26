@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, Plus } from "lucide-react";
 import { hotspotStories, promoSlides } from "@/data/homepage";
-import { effects } from "@/data/effects";
+import { effects } from "@/config/effects";
 import { formatPrice, products } from "@/data/products";
 import { useCart } from "@/components/CartProvider";
 

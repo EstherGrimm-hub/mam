@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { effects } from "@/data/effects";
+import { effects } from "@/config/effects";
 import { journeyChapters, herbNames } from "@/data/homepage";
 import { products } from "@/data/products";
 

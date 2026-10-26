@@ -67,7 +67,7 @@ export default function SiteHeader() {
             </div>
             {links.map((link, index) => (
               <Link key={link.href} href={link.href} style={{ "--menu-index": index } as React.CSSProperties} onClick={() => setIsMenuOpen(false)}>
-                <span>0{index + 1}</span>{link.label}
+                {link.label}
               </Link>
             ))}
             <p className="menu-caption">Natural Hair Care · Từ thiên nhiên, nuôi dưỡng vẻ đẹp Việt</p>

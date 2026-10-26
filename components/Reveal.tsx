@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
-import { effects } from "@/data/effects";
+import { effects } from "@/config/effects";
 
 type RevealProps = {
   children: ReactNode;

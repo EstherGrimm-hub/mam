@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import type Lenis from "lenis";
-import { effects } from "@/data/effects";
+import { effects } from "@/config/effects";
 
 export default function SmoothScroll() {
   useEffect(() => {

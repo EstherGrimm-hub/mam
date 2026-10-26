@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Logo from "@/components/Logo";
-import { effects } from "@/data/effects";
+import { effects } from "@/config/effects";
 
 const SESSION_KEY = "mam-preloader-seen-v1";
 const DURATION_MS = 700;

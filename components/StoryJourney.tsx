@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { journeyChapters } from "@/data/homepage";
-import { effects } from "@/data/effects";
+import { effects } from "@/config/effects";
 
 export default function StoryJourney() {
   const [activeChapter, setActiveChapter] = useState(0);
