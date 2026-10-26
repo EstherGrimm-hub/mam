@@ -1,0 +1,40 @@
+import Link from "next/link";
+import { AtSign, Leaf } from "lucide-react";
+
+export default function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="page-shell footer-main">
+        <div className="footer-brand">
+          <Link className="footer-wordmark font-display" href="/">mầm<Leaf size={17} /></Link>
+          <p>Natural Hair Care<br />Từ thiên nhiên, nuôi dưỡng vẻ đẹp Việt.</p>
+          <a className="social-link" href="https://instagram.com" aria-label="Instagram mầm">
+            <AtSign size={18} />
+          </a>
+        </div>
+        <div className="footer-column">
+          <h2>Khám phá</h2>
+          <Link href="/san-pham">Tất cả sản phẩm</Link>
+          <Link href="/ve-mam">Câu chuyện mầm</Link>
+          <Link href="/tra-cuu-don-hang">Tra cứu đơn hàng</Link>
+        </div>
+        <div className="footer-column">
+          <h2>Hỗ trợ</h2>
+          <Link href="/chinh-sach-doi-tra">Đổi trả</Link>
+          <Link href="/chinh-sach-van-chuyen">Vận chuyển</Link>
+          <Link href="/chinh-sach-bao-mat">Bảo mật</Link>
+        </div>
+        <div className="footer-column footer-contact">
+          <h2>Ghé thăm khu vườn</h2>
+          <p>Thứ Hai – Chủ Nhật<br />09:00 – 21:00</p>
+          <a href="mailto:hello@mamnature.vn">hello@mamnature.vn</a>
+          <a href="tel:0900000000">0900 000 000</a>
+        </div>
+      </div>
+      <div className="page-shell footer-bottom">
+        <span>© 2026 mầm Natural Hair Care</span>
+        <span>Chăm sóc dịu lành, từ những điều lành.</span>
+      </div>
+    </footer>
+  );
+}
