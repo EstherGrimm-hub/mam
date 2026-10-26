@@ -4,6 +4,7 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { CartProvider } from "@/components/CartProvider";
+import ExperienceEffects from "@/components/ExperienceEffects";
 
 const vietnamPro = Be_Vietnam_Pro({
   variable: "--font-vietnam",
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="vi" className={`${vietnamPro.variable} ${fraunces.variable}`}>
       <body className="min-h-screen antialiased">
         <CartProvider>
+          <ExperienceEffects />
           <SiteHeader />
           <main>{children}</main>
           <SiteFooter />

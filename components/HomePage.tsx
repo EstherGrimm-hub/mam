@@ -3,7 +3,8 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, Check, Leaf, MoveUpRight, Sparkles } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import SectionTitle from "@/components/SectionTitle";
-import FadeUp from "@/components/FadeUp";
+import Reveal from "@/components/Reveal";
+import MagneticLink from "@/components/MagneticLink";
 import { socialLinks } from "@/data/site";
 import { products } from "@/data/products";
 
@@ -45,10 +46,16 @@ export default function HomePage() {
         <div className="hero-shade" />
         <div className="page-shell hero-content">
           <span className="hero-kicker"><Leaf size={15} /> Vẻ đẹp Việt, từ những điều lành</span>
-          <h1 className="font-display">Sạch tóc.<br />Mềm mượt.<br /><em>Hỗ trợ giảm gãy rụng.</em></h1>
+          <Reveal className="hero-title-reveal">
+            <h1 className="font-display" aria-label="Sạch tóc. Mềm mượt. Hỗ trợ giảm gãy rụng.">
+              <span className="headline-line"><span>Sạch tóc.</span></span>
+              <span className="headline-line"><span>Mềm mượt.</span></span>
+              <span className="headline-line"><em>Hỗ trợ giảm gãy rụng.</em></span>
+            </h1>
+          </Reveal>
           <p>Chăm sóc mái tóc bằng sự dịu dàng của thảo mộc Việt, để mỗi ngày bắt đầu thật nhẹ tênh.</p>
           <div className="hero-actions">
-            <Link className="button-light" href="/san-pham">Khám phá sản phẩm <ArrowRight size={16} /></Link>
+            <MagneticLink className="button-light" href="/san-pham">Khám phá sản phẩm <ArrowRight size={16} /></MagneticLink>
             <Link className="hero-story-link" href="/ve-mam">Chuyện của mầm <MoveUpRight size={15} /></Link>
           </div>
           <div className="hero-note"><span>01 / 05</span><span className="hero-note-line" /><span>Chăm sóc tóc từ thiên nhiên</span></div>
@@ -62,7 +69,7 @@ export default function HomePage() {
           <SectionTitle eyebrow="Được nâng niu mỗi ngày" title="Những mầm xanh bán chạy" description="Chăm sóc tóc thật lành, bắt đầu từ những lựa chọn giản dị." />
           <Link className="text-link" href="/san-pham">Xem tất cả sản phẩm <ArrowUpRight size={16} /></Link>
         </div>
-        <div className="product-grid">{bestsellers.map((product, index) => <FadeUp key={product.id} delay={index * 70}><ProductCard product={product} /></FadeUp>)}</div>
+        <div className="product-grid">{bestsellers.map((product, index) => <Reveal key={product.id} delay={index * 70}><ProductCard product={product} /></Reveal>)}</div>
       </section>
 
       {featuredCombo && (
@@ -95,13 +102,13 @@ export default function HomePage() {
           <SectionTitle eyebrow="Từ vườn cây Việt" title="Thảo mộc thân quen, chăm tóc dịu lành" description="Chọn những nguyên liệu gần gũi, gìn giữ nét đẹp tự nhiên trong từng bước chăm sóc." align="center" />
           <div className="ingredient-grid">
             {ingredients.map(([name, copy], index) => (
-              <FadeUp key={name} delay={index * 65}>
+              <Reveal key={name} delay={index * 65}>
                 <article className="ingredient-item">
                   <span className={`ingredient-number ingredient-number-${index + 1}`}>0{index + 1}</span>
                   <div className="ingredient-leaf"><Leaf size={24} strokeWidth={1.4} /></div>
                   <h3 className="font-display">{name}</h3><p>{copy}</p>
                 </article>
-              </FadeUp>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -116,11 +123,11 @@ export default function HomePage() {
         </div>
         <div className="promise-list">
           {promises.map(([number, title, copy]) => (
-            <FadeUp key={number} delay={Number(number) * 70}>
+            <Reveal key={number} delay={Number(number) * 70}>
               <div className="promise-row">
                 <span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div><ArrowUpRight size={18} />
               </div>
-            </FadeUp>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -130,13 +137,13 @@ export default function HomePage() {
           <SectionTitle eyebrow="Lời thương gửi mầm" title="Một chút vui từ mái tóc" description="Những chia sẻ giản dị trong hành trình chăm sóc tóc mỗi ngày." align="center" />
           <div className="review-grid">
             {reviews.map(([quote, name, product]) => (
-              <FadeUp key={name} delay={reviews.indexOf(reviews.find((review) => review[1] === name)!) * 80}>
+              <Reveal key={name} delay={reviews.indexOf(reviews.find((review) => review[1] === name)!) * 80}>
                 <figure className="review-card">
                   <div className="review-stars" aria-label="5 trên 5 sao">★★★★★</div>
                   <blockquote>{quote}</blockquote>
                   <figcaption><span className="review-avatar">{name.charAt(0)}</span><span><strong>{name}</strong><small>{product}</small></span><Sparkles size={17} /></figcaption>
                 </figure>
-              </FadeUp>
+              </Reveal>
             ))}
           </div>
         </div>
