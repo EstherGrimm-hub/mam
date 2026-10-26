@@ -18,7 +18,7 @@ export default function SiteHeader() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLElement>(null);
-  const { itemCount } = useCart();
+  const { itemCount, cartRevision } = useCart();
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -73,7 +73,7 @@ export default function SiteHeader() {
             <p className="menu-caption">Natural Hair Care · Từ thiên nhiên, nuôi dưỡng vẻ đẹp Việt</p>
           </nav>
           <button className="cart-link cart-trigger" type="button" aria-label={`Mở giỏ hàng${itemCount ? `, ${itemCount} sản phẩm` : ""}`} onClick={() => setIsCartOpen(true)}>
-            <ShoppingBag size={20} strokeWidth={1.7} />
+            <span className="cart-bump-icon" key={cartRevision}><ShoppingBag size={20} strokeWidth={1.7} /></span>
             {itemCount > 0 && <span className="cart-count">{itemCount}</span>}
             <span className="cart-label">Giỏ hàng</span>
           </button>

@@ -15,7 +15,7 @@ export const journeyChapters = [
     title: "Thảo mộc",
     eyebrow: "Nếp xưa, nhịp sống mới",
     copy: "Bồ kết, hương nhu, vỏ bưởi gợi lại nếp chăm tóc thân thương, được kể bằng ngôn ngữ của hôm nay.",
-    image: "/images/banner-dau-goi.png",
+    image: "/images/dau-xa.png",
     alt: "Dầu gội thảo mộc mầm cùng hình ảnh lá xanh",
     tone: "#3d5235",
   },
@@ -24,7 +24,7 @@ export const journeyChapters = [
     title: "Nâng niu",
     eyebrow: "Mỗi bước một cảm nhận",
     copy: "Gội, xả, ủ hay dưỡng thêm một chút. Bạn chọn nhịp chăm tóc vừa vặn với mình, mỗi ngày một khác.",
-    image: "/images/banner-dau-xa.png",
+    image: "/images/kem-u-toc.png",
     alt: "Dầu xả mầm trong khung cảnh thảo mộc xanh",
     tone: "#536646",
   },
@@ -33,22 +33,22 @@ export const journeyChapters = [
     title: "Mái tóc",
     eyebrow: "Một nghi thức nhỏ mỗi ngày",
     copy: "Chậm lại đôi chút, lắng nghe mái tóc và để khoảnh khắc chăm sóc trở thành khoảng riêng dịu dàng của bạn.",
-    image: "/images/banner-serum.png",
+    image: "/images/serum.png",
     alt: "Serum tóc mầm với lá xanh và ánh sáng dịu",
     tone: "#687756",
   },
 ];
 
 export const hotspotStories = [
-  { productSlug: "dau-goi-thao-moc", image: "/images/banner-dau-goi.png", x: 62, y: 54, alt: "Poster dầu gội thảo mộc mầm" },
-  { productSlug: "dau-xa-phuc-hoi-mem-muot", image: "/images/banner-dau-xa.png", x: 48, y: 48, alt: "Poster dầu xả phục hồi và mềm mượt mầm" },
-  { productSlug: "serum-toc", image: "/images/banner-serum.png", x: 32, y: 52, alt: "Poster serum tóc mầm" },
+  { productSlug: "dau-goi-thao-moc", image: "/images/banner/banner-dau-goi.png", x: 62, y: 54, alt: "Poster dầu gội thảo mộc mầm" },
+  { productSlug: "dau-xa-phuc-hoi-mem-muot", image: "/images/banner/banner-dau-xa.png", x: 48, y: 48, alt: "Poster dầu xả phục hồi và mềm mượt mầm" },
+  { productSlug: "serum-toc", image: "/images/banner/banner-serum.png", x: 32, y: 52, alt: "Poster serum tóc mầm" },
 ];
 
 export const promoSlides = [
-  { image: "/images/banner-dau-goi.png", alt: "Dầu gội thảo mộc mầm với bưởi và bồ kết", href: "/san-pham/dau-goi-thao-moc", label: "Khám phá dầu gội" },
-  { image: "/images/banner-dau-xa.png", alt: "Dầu xả phục hồi và mềm mượt mầm", href: "/san-pham/dau-xa-phuc-hoi-mem-muot", label: "Khám phá dầu xả" },
-  { image: "/images/banner-serum.png", alt: "Serum tóc mầm chăm sóc tóc hằng ngày", href: "/san-pham/serum-toc", label: "Khám phá serum" },
+  { image: "/images/banner/banner-dau-goi.png", alt: "Dầu gội thảo mộc mầm với bưởi và bồ kết", href: "/san-pham/dau-goi-thao-moc", label: "Khám phá dầu gội" },
+  { image: "/images/banner/banner-dau-xa.png", alt: "Dầu xả phục hồi và mềm mượt mầm", href: "/san-pham/dau-xa-phuc-hoi-mem-muot", label: "Khám phá dầu xả" },
+  { image: "/images/banner/banner-serum.png", alt: "Serum tóc mầm chăm sóc tóc hằng ngày", href: "/san-pham/serum-toc", label: "Khám phá serum" },
 ];
 
 // TODO: thay bằng đánh giá đã được khách hàng cho phép sử dụng.

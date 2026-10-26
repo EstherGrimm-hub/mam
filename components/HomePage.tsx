@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, Check, Leaf, MoveUpRight } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
+import PackageSelector from "@/components/PackageSelector";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import MagneticLink from "@/components/MagneticLink";
@@ -73,11 +74,13 @@ export default function HomePage() {
         <div className="product-grid">{bestsellers.map((product, index) => <Reveal key={product.id} delay={index * 70}><ProductCard product={product} /></Reveal>)}</div>
       </section>
 
+      <PackageSelector />
+
       {featuredCombo && (
         <section className="combo-feature">
           <div className="page-shell combo-layout">
             <div className="combo-photo">
-              <Image src="/images/kem-u-toc.jpg" alt="Kem ủ tóc trong bộ chăm sóc thảo mộc" fill sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src="/images/kem-u-toc.png" alt="Kem ủ tóc trong bộ chăm sóc thảo mộc" fill sizes="(max-width: 768px) 100vw, 50vw" />
               <span className="combo-photo-label">Bộ chăm sóc 3 bước</span>
             </div>
             <div className="combo-copy">

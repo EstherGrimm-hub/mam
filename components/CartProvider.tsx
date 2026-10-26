@@ -7,6 +7,7 @@ export type CartLine = { productId: string; quantity: number };
 type CartContextValue = {
   items: CartLine[];
   itemCount: number;
+  cartRevision: number;
   addItem: (productId: string, quantity?: number) => void;
   setQuantity: (productId: string, quantity: number) => void;
   removeItem: (productId: string) => void;
@@ -18,6 +19,7 @@ const STORAGE_KEY = "mam-cart-v1";
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartLine[]>([]);
+  const [cartRevision, setCartRevision] = useState(0);
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
@@ -50,6 +52,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         ? current.map((line) => line.productId === productId ? { ...line, quantity: line.quantity + quantity } : line)
         : [...current, { productId, quantity }];
     });
+    setCartRevision((revision) => revision + 1);
   }
 
   function setQuantity(productId: string, quantity: number) {
@@ -68,7 +71,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const itemCount = items.reduce((total, line) => total + line.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ items, itemCount, addItem, setQuantity, removeItem, clearCart }}>
+    <CartContext.Provider value={{ items, itemCount, cartRevision, addItem, setQuantity, removeItem, clearCart }}>
       {children}
     </CartContext.Provider>
   );

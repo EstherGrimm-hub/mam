@@ -32,12 +32,14 @@ export default function StoryJourney() {
           <h2 className="font-display" id="journey-heading">Hành trình từ mầm</h2>
         </div>
         <div className="journey-layout">
-          <div className="journey-visual" style={{ backgroundColor: current.tone }}>
-            <Image key={current.image} src={current.image} alt={current.alt} fill sizes="(max-width: 760px) 100vw, 48vw" />
-            <div className="journey-image-shade" />
-            <div className="journey-visual-caption"><span>{current.number}</span><span>{current.title}</span></div>
-            <div className="journey-progress" aria-label={`Chương ${activeChapter + 1} trên ${journeyChapters.length}`}>
-              <span className="journey-progress-fill" style={{ transform: `scaleY(${progress / 100})` }} />
+          <div className="journey-visual-sticky">
+            <div className="journey-visual" style={{ backgroundColor: current.tone }}>
+              <Image key={current.image} src={current.image} alt={current.alt} fill sizes="(max-width: 760px) 100vw, 48vw" />
+              <div className="journey-image-shade" />
+              <div className="journey-visual-caption"><span>{current.number}</span><span>{current.title}</span></div>
+              <div className="journey-progress" aria-label={`Chương ${activeChapter + 1} trên ${journeyChapters.length}`}>
+                <span className="journey-progress-fill" style={{ transform: `scaleY(${progress / 100})` }} />
+              </div>
             </div>
           </div>
           <div className="journey-chapters">
