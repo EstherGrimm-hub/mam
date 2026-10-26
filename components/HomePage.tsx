@@ -145,7 +145,7 @@ export default function HomePage() {
       <section className="shopee-banner page-shell">
         <div className="shopee-mark"><Image src="/images/brand/logo-mark-light.png" alt="Biểu trưng mầm" fill sizes="96px" /></div>
         <div><span className="eyebrow eyebrow-light">Ghé khu vườn của mầm</span><h2 className="font-display">Gặp mầm trên Shopee</h2><p>Chọn món thương bạn, mầm gói ghém gửi đến tận nhà.</p></div>
-        <a className="button-light" href={socialLinks.find((social) => social.platform === "shopee")?.href ?? "https://shopee.vn"} target="_blank" rel="noreferrer">Ghé gian hàng <ArrowUpRight size={16} /></a>
+        <a className="button-light" href={socialLinks.find((social) => social.platform === "shopee")?.href ?? "https://shopee.vn/bennphuc"} target="_blank" rel="noreferrer">Ghé gian hàng <ArrowUpRight size={16} /></a>
       </section>
 
       <section className="faq-section page-shell">
