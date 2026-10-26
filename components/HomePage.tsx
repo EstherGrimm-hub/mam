@@ -1,10 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, Leaf, MoveUpRight, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Check, Leaf, MoveUpRight } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import MagneticLink from "@/components/MagneticLink";
+import HeroArtwork from "@/components/HeroArtwork";
+import HerbMarquee from "@/components/HerbMarquee";
+import StoryJourney from "@/components/StoryJourney";
+import CountUpStats from "@/components/CountUpStats";
+import ProductHotspots from "@/components/ProductHotspots";
+import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 import { socialLinks } from "@/data/site";
 import { products } from "@/data/products";
 
@@ -22,12 +28,6 @@ const promises = [
   ["03", "Nâng niu từng mái tóc", "Hướng dẫn dùng rõ ràng, để bạn hiểu mái tóc mình hơn qua mỗi lần chăm sóc."],
 ];
 
-const reviews = [
-  ["“Mùi bưởi thoang thoảng rất dễ chịu, tóc sạch mà không có cảm giác khô căng.”", "Minh Anh", "Dầu gội thảo mộc"],
-  ["“Tóc mình dễ rối, dùng dầu xả xong chải nhẹ nhàng hơn hẳn. Bao bì cũng xinh.”", "Thu Hà", "Dầu xả phục hồi & mềm mượt"],
-  ["“Mình thích cách mầm hướng dẫn dùng rất rõ, bộ gội xả ủ hợp với routine của mình.”", "Ngọc Linh", "Combo Gội, Xả & Ủ"],
-];
-
 const faqs = [
   ["Sản phẩm mầm phù hợp với loại tóc nào?", "Mỗi mái tóc có nhu cầu khác nhau. Bạn có thể xem mô tả và hướng dẫn của từng sản phẩm, hoặc nhắn mầm để được gợi ý theo tình trạng tóc hiện tại."],
   ["Dùng dầu gội và dầu xả như thế nào?", "Làm sạch tóc với dầu gội trước, sau đó thoa dầu xả ở thân và ngọn tóc trong 2–3 phút rồi xả sạch."],
@@ -42,27 +42,28 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <section className="home-hero">
-        <Image className="hero-image" src="/images/dau-goi-thao-moc.png" alt="Dầu gội thảo mộc mầm giữa tán lá xanh" fill priority sizes="100vw" />
+        <HeroArtwork src="/images/dau-goi-thao-moc.png" alt="Chai dầu gội thảo mộc mầm giữa lá xanh, bưởi và bồ kết" />
         <div className="hero-shade" />
         <div className="page-shell hero-content">
-          <span className="hero-kicker"><Leaf size={15} /> Vẻ đẹp Việt, từ những điều lành</span>
+          <span className="hero-kicker"><Leaf size={15} /> Natural Hair Care · Chăm tóc từ gốc</span>
           <Reveal className="hero-title-reveal">
-            <h1 className="font-display" aria-label="Sạch tóc. Mềm mượt. Hỗ trợ giảm gãy rụng.">
-              <span className="headline-line"><span>Sạch tóc.</span></span>
-              <span className="headline-line"><span>Mềm mượt.</span></span>
-              <span className="headline-line"><em>Hỗ trợ giảm gãy rụng.</em></span>
+            <h1 className="font-display" aria-label="Từ một mầm xanh, đến mái tóc khỏe.">
+              <span className="headline-line"><span>Từ một mầm xanh,</span></span>
+              <span className="headline-line"><em>đến mái tóc khỏe.</em></span>
             </h1>
           </Reveal>
-          <p>Chăm sóc mái tóc bằng sự dịu dàng của thảo mộc Việt, để mỗi ngày bắt đầu thật nhẹ tênh.</p>
+          <p>Một nghi thức nhỏ từ bưởi, bồ kết và những thảo mộc thân quen, cho mái tóc được nâng niu mỗi ngày.</p>
           <div className="hero-actions">
-            <MagneticLink className="button-light" href="/san-pham">Khám phá sản phẩm <ArrowRight size={16} /></MagneticLink>
-            <Link className="hero-story-link" href="/ve-mam">Chuyện của mầm <MoveUpRight size={15} /></Link>
+            <MagneticLink className="button-light" href="/san-pham">Mua trên web <ArrowRight size={16} /></MagneticLink>
+            <a className="hero-story-link" href={socialLinks.find((social) => social.platform === "shopee")?.href ?? "https://shopee.vn/bennphuc"} target="_blank" rel="noreferrer">Xem trên Shopee <MoveUpRight size={15} /></a>
           </div>
           <div className="hero-note"><span>01 / 05</span><span className="hero-note-line" /><span>Chăm sóc tóc từ thiên nhiên</span></div>
         </div>
         <a href="#san-pham-noi-bat" className="hero-scroll" aria-label="Cuộn đến sản phẩm nổi bật"><ArrowDown size={18} /></a>
         <div className="hero-stamp"><span>GIEO LÀNH</span><Leaf size={20} /><span>GẶT XANH</span></div>
       </section>
+
+      <HerbMarquee />
 
       <section className="section-products page-shell" id="san-pham-noi-bat">
         <div className="products-heading">
@@ -95,6 +96,9 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      <StoryJourney />
+      <CountUpStats />
 
       <section className="ingredient-section">
         <div className="page-shell">
@@ -132,22 +136,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="review-section">
-        <div className="page-shell">
-          <SectionTitle eyebrow="Lời thương gửi mầm" title="Một chút vui từ mái tóc" description="Những chia sẻ giản dị trong hành trình chăm sóc tóc mỗi ngày." align="center" />
-          <div className="review-grid">
-            {reviews.map(([quote, name, product]) => (
-              <Reveal key={name} delay={reviews.indexOf(reviews.find((review) => review[1] === name)!) * 80}>
-                <figure className="review-card">
-                  <div className="review-stars" aria-label="5 trên 5 sao">★★★★★</div>
-                  <blockquote>{quote}</blockquote>
-                  <figcaption><span className="review-avatar">{name.charAt(0)}</span><span><strong>{name}</strong><small>{product}</small></span><Sparkles size={17} /></figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductHotspots />
+      <TestimonialsMarquee />
 
       <section className="shopee-banner page-shell">
         <div className="shopee-mark"><Image src="/images/brand/logo-mark-light.png" alt="Biểu trưng mầm" fill sizes="96px" /></div>

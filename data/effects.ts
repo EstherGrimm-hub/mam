@@ -4,4 +4,10 @@ export const effects = {
   reveal: true,
   fullscreenMenu: true,
   magneticButtons: true,
+  parallax: true,
+  journey: true,
+  counters: true,
+  hotspots: true,
+  carousel: true,
+  testimonials: false,
 } as const;
