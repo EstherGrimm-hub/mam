@@ -22,19 +22,23 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://mam.vn"),
   title: {
-    default: "mầm | Chăm sóc tóc từ thiên nhiên",
+    default: "mầm - Natural Hair Care | Dầu gội, dầu xả thảo mộc",
     template: "%s | mầm",
   },
   description:
-    "Natural Hair Care - Từ thiên nhiên, nuôi dưỡng vẻ đẹp Việt. Khám phá chăm sóc tóc thảo mộc dịu lành từ mầm.",
+    "mầm Natural Hair Care - Dầu gội, dầu xả và chăm sóc tóc thảo mộc. Từ thiên nhiên, nuôi dưỡng vẻ đẹp Việt.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "vi_VN",
     siteName: "mầm Natural Hair Care",
-    title: "mầm | Từ thiên nhiên, nuôi dưỡng vẻ đẹp Việt",
+    title: "mầm - Natural Hair Care | Dầu gội, dầu xả thảo mộc",
     description:
       "Chăm sóc tóc thảo mộc dịu lành, nâng niu mái tóc Việt mỗi ngày.",
-    images: ["/images/dau-goi-thao-moc.png"],
+    images: ["/images/og-default.png"],
   },
   twitter: {
     card: "summary_large_image",

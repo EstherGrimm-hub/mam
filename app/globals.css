@@ -183,32 +183,34 @@ button {
   align-items: center;
 }
 
-.brand-lockup {
-  display: flex;
-  position: relative;
+.brand-logo {
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
-  justify-self: center;
+  gap: 3px;
   color: var(--moss);
   line-height: 1;
+  text-decoration: none;
 }
 
-.brand-mark {
-  position: absolute;
-  top: 3px;
-  left: calc(50% + 7px);
-  transform: rotate(-18deg);
+.brand-logo img {
+  display: block;
+  flex-shrink: 0;
 }
 
-.brand-name {
-  font-size: 2.1rem;
+.brand-logo-tagline {
+  color: currentColor;
+  font-size: 0.42rem;
   font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.brand-tagline {
-  margin-top: 3px;
-  font-size: 0.46rem;
-  letter-spacing: 0.19em;
+.header-logo {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
 }
 
 .main-nav {
@@ -245,7 +247,8 @@ button {
 .site-footer {
   margin-top: 92px;
   padding-top: 57px;
-  background: #e7dfcb;
+  background: var(--moss);
+  color: var(--paper);
 }
 
 .footer-main {
@@ -255,22 +258,14 @@ button {
   padding-bottom: 50px;
 }
 
-.footer-wordmark {
-  display: inline-flex;
-  gap: 7px;
+.footer-logo {
   align-items: flex-start;
-  color: var(--moss);
-  font-size: 2.6rem;
-  font-weight: 600;
-}
-
-.footer-wordmark svg {
-  margin-top: 6px;
+  color: var(--paper);
 }
 
 .footer-brand p,
 .footer-contact p {
-  color: #5f6959;
+  color: rgba(241, 232, 212, 0.76);
   font-size: 0.75rem;
   line-height: 1.9;
 }
@@ -281,8 +276,14 @@ button {
   height: 35px;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(241, 232, 212, 0.32);
   border-radius: 50%;
+  color: var(--paper);
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
 }
 
 .footer-column {
@@ -290,13 +291,13 @@ button {
   flex-direction: column;
   gap: 13px;
   padding-top: 10px;
-  color: #5f6959;
+  color: rgba(241, 232, 212, 0.76);
   font-size: 0.73rem;
 }
 
 .footer-column h2 {
   margin: 0 0 5px;
-  color: var(--ink);
+  color: var(--paper);
   font-size: 0.78rem;
 }
 
@@ -310,9 +311,24 @@ button {
   min-height: 55px;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--line);
-  color: #68715f;
+  border-top: 1px solid rgba(241, 232, 212, 0.22);
+  color: rgba(241, 232, 212, 0.72);
   font-size: 0.64rem;
+}
+
+.footer-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.social-link-labeled {
+  width: auto;
+  gap: 7px;
+  border-radius: 99px;
+  padding: 0 11px;
+  font-size: 0.63rem;
 }
 
 .home-hero {
@@ -904,7 +920,7 @@ button {
 
 .shopee-banner {
   display: grid;
-  grid-template-columns: 95px 1fr auto;
+  grid-template-columns: 96px 1fr auto;
   gap: 26px;
   align-items: center;
   margin-top: 88px;
@@ -915,18 +931,23 @@ button {
 }
 
 .shopee-mark {
-  display: grid;
-  width: 83px;
-  height: 83px;
-  place-items: center;
+  position: relative;
+  display: flex;
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   border: 1px solid rgba(245, 239, 223, 0.55);
   border-radius: 50%;
-  font-family: var(--font-fraunces), Georgia, serif;
-  font-size: 2.3rem;
 }
 
-.shopee-mark span {
-  color: #d6dfc8;
+.shopee-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .shopee-banner h2 {
@@ -1048,10 +1069,6 @@ button {
   .header-inner {
     min-height: 68px;
     grid-template-columns: 42px 1fr 42px;
-  }
-
-  .brand-name {
-    font-size: 1.9rem;
   }
 
   .menu-toggle {
@@ -1326,16 +1343,10 @@ button {
   }
 
   .shopee-banner {
-    grid-template-columns: 58px 1fr;
+    grid-template-columns: 96px minmax(0, 1fr);
     gap: 16px;
     margin-top: 68px;
     padding: 23px 19px;
-  }
-
-  .shopee-mark {
-    width: 56px;
-    height: 56px;
-    font-size: 1.55rem;
   }
 
   .shopee-banner h2 {

@@ -31,7 +31,7 @@ export default function OrderLookup() {
   return (
     <div className="lookup-panel">
       <form className="lookup-form" onSubmit={lookupOrder}>
-        <label className="form-field">Mã đơn hàng<input name="orderId" required placeholder="MAM-20261026-AB12CD34" /></label>
+        <label className="form-field">Mã đơn hàng<input name="orderId" required placeholder="MẦM-20261026-AB12CD34" /></label>
         <label className="form-field">Số điện thoại đặt hàng<input name="phone" inputMode="tel" type="tel" required placeholder="09xx xxx xxx" /></label>
         <button className="button-primary" type="submit" disabled={isSearching}><Search size={16} />{isSearching ? "Đang tra cứu…" : "Tra cứu đơn"}</button>
       </form>

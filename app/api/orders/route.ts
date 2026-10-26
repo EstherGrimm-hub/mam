@@ -19,7 +19,7 @@ export async function GET(request: Request) {
   const url = new URL(request.url);
   const orderId = cleanText(url.searchParams.get("orderId"), 32).toUpperCase();
   const phone = normalizePhone(cleanText(url.searchParams.get("phone"), 16));
-  if (!/^MAM-\d{8}-[A-F0-9]{8}$/.test(orderId) || !/^(?:0|\+?84)(?:3|5|7|8|9)\d{8}$/.test(phone)) {
+  if (!/^(?:MẦM|MAM)-\d{8}-[A-F0-9]{8}$/.test(orderId) || !/^(?:0|\+?84)(?:3|5|7|8|9)\d{8}$/.test(phone)) {
     return NextResponse.json({ error: "Mã đơn hoặc số điện thoại chưa hợp lệ." }, { status: 400 });
   }
 
@@ -105,7 +105,7 @@ export async function POST(request: Request) {
 
   const subtotal = normalizedItems.reduce((total, item) => total + item.lineTotal, 0);
   const shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_FEE;
-  const orderId = `MAM-${new Date().toISOString().slice(0, 10).replaceAll("-", "")}-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
+  const orderId = `MẦM-${new Date().toISOString().slice(0, 10).replaceAll("-", "")}-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
   const order = {
     orderId,
     createdAt: new Date().toISOString(),

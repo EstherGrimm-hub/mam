@@ -1,16 +1,15 @@
 import Link from "next/link";
-import { AtSign, Leaf } from "lucide-react";
+import Logo from "@/components/Logo";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="page-shell footer-main">
         <div className="footer-brand">
-          <Link className="footer-wordmark font-display" href="/">mầm<Leaf size={17} /></Link>
-          <p>Natural Hair Care<br />Từ thiên nhiên, nuôi dưỡng vẻ đẹp Việt.</p>
-          <a className="social-link" href="https://instagram.com" aria-label="Instagram mầm">
-            <AtSign size={18} />
-          </a>
+          <Logo variant="light" height={48} className="footer-logo" />
+          <p>Từ thiên nhiên, nuôi dưỡng vẻ đẹp Việt.</p>
+          <SocialLinks />
         </div>
         <div className="footer-column">
           <h2>Khám phá</h2>

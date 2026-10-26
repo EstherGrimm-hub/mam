@@ -4,6 +4,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Check, Leaf, MoveUpRight, Sparkles
 import ProductCard from "@/components/ProductCard";
 import SectionTitle from "@/components/SectionTitle";
 import FadeUp from "@/components/FadeUp";
+import { socialLinks } from "@/data/site";
 import { products } from "@/data/products";
 
 const ingredients = [
@@ -142,9 +143,9 @@ export default function HomePage() {
       </section>
 
       <section className="shopee-banner page-shell">
-        <div className="shopee-mark">m<span>ă</span>m</div>
+        <div className="shopee-mark"><Image src="/images/brand/logo-mark-light.png" alt="Biểu trưng mầm" fill sizes="96px" /></div>
         <div><span className="eyebrow eyebrow-light">Ghé khu vườn của mầm</span><h2 className="font-display">Gặp mầm trên Shopee</h2><p>Chọn món thương bạn, mầm gói ghém gửi đến tận nhà.</p></div>
-        <a className="button-light" href="https://shopee.vn" target="_blank" rel="noreferrer">Ghé gian hàng <ArrowUpRight size={16} /></a>
+        <a className="button-light" href={socialLinks.find((social) => social.platform === "shopee")?.href ?? "https://shopee.vn"} target="_blank" rel="noreferrer">Ghé gian hàng <ArrowUpRight size={16} /></a>
       </section>
 
       <section className="faq-section page-shell">

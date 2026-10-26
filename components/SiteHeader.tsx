@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Leaf, Menu, ShoppingBag, X } from "lucide-react";
 import { useCart } from "@/components/CartProvider";
 import CartDrawer from "@/components/CartDrawer";
+import Logo from "@/components/Logo";
 
 const links = [
   { href: "/san-pham", label: "Sản phẩm" },
@@ -33,11 +34,7 @@ export default function SiteHeader() {
         >
           {isMenuOpen ? <X size={21} /> : <Menu size={21} />}
         </button>
-        <Link className="brand-lockup" href="/" aria-label="mầm, về trang chủ">
-          <span className="brand-mark"><Leaf size={14} fill="currentColor" /></span>
-          <span className="brand-name font-display">mầm</span>
-          <span className="brand-tagline">NATURAL HAIR CARE</span>
-        </Link>
+        <Logo variant="dark" height={34} className="header-logo" />
         <nav className={`main-nav${isMenuOpen ? " is-open" : ""}`} aria-label="Điều hướng chính">
           {links.map((link) => (
             <Link key={link.href} href={link.href} onClick={() => setIsMenuOpen(false)}>
