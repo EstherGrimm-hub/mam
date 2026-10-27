@@ -43,7 +43,7 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <section className="home-hero">
-        <HeroArtwork src="/images/best-seller-items.png" alt="Chai dầu gội thảo mộc mầm giữa lá xanh, bưởi và bồ kết" />
+        <HeroArtwork src="/images/5-product.png" alt="Chai dầu gội thảo mộc mầm giữa lá xanh, bưởi và bồ kết" />
         <div className="hero-shade" />
         <div className="page-shell hero-content">
           <span className="hero-kicker"><Leaf size={15} /> Natural Hair Care · Chăm tóc từ gốc</span>
