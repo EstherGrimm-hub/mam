@@ -53,6 +53,8 @@ export const promoSlides = [
 
 export const campaign1212 = {
   period: "06–19/12",
+  startsAt: "2026-12-06T00:00:00+07:00",
+  endsAt: "2026-12-19T23:59:59+07:00",
   items: [
     { image: "/images/products/dau-goi-uu-dai.png", alt: "Poster ưu đãi 12.12 dầu gội thảo mộc mầm", href: "/san-pham/dau-goi-thao-moc" },
     { image: "/images/products/dau-xa-uu-dai.png", alt: "Poster ưu đãi 12.12 dầu xả mầm", href: "/san-pham/dau-xa-phuc-hoi-mem-muot" },

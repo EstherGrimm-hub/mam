@@ -1,6 +1,6 @@
 import { socialLinks, type SocialPlatform } from "@/data/site";
 
-function SocialIcon({ platform }: { platform: SocialPlatform }) {
+export function SocialIcon({ platform }: { platform: SocialPlatform }) {
   switch (platform) {
     case "facebook":
       return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2h-2.8V13h2.8v8h3.4Z" /></svg>;

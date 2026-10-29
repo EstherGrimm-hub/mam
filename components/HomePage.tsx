@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, Leaf, MoveUpRight } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Check, Leaf, MoveUpRight, Sparkles } from "lucide-react";
+import CampaignCountdown from "@/components/CampaignCountdown";
+import SocialFollow from "@/components/SocialFollow";
 import ProductCard from "@/components/ProductCard";
 import PackageSelector from "@/components/PackageSelector";
 import SectionTitle from "@/components/SectionTitle";
@@ -28,6 +30,14 @@ const promises = [
   ["01", "Cảm hứng từ thảo mộc Việt", "Chắt lọc từ những nguyên liệu quen thuộc trong nếp chăm tóc của người Việt."],
   ["02", "Chăm sóc dịu nhẹ mỗi ngày", "Công thức hướng đến cảm giác dễ chịu, phù hợp với nhịp sống thường ngày."],
   ["03", "Nâng niu từng mái tóc", "Hướng dẫn dùng rõ ràng, để bạn hiểu mái tóc mình hơn qua mỗi lần chăm sóc."],
+];
+
+const rescueSteps = [
+  ["Gội", "Dầu gội thảo mộc", "dau-goi-thao-moc"],
+  ["Xả", "Dầu xả mềm mượt", "dau-xa-phuc-hoi-mem-muot"],
+  ["Ủ", "Kem ủ tóc", "kem-u-toc"],
+  ["Dưỡng", "Serum tóc", "serum-toc"],
+  ["Giữ ẩm", "Xịt dưỡng tóc", "xit-duong-toc"],
 ];
 
 const faqs = [
@@ -67,6 +77,26 @@ export default function HomePage() {
 
       <HerbMarquee />
 
+      <section className="campaign-spotlight page-shell" aria-labelledby="campaign-spotlight-title">
+        <Reveal>
+          <Link href="#uu-dai-12-12" className="campaign-spotlight-banner" aria-label="Xem các ưu đãi Siêu Sale 12.12">
+            <Image src="/images/banner/banner-uu-dai.png" alt="Siêu Sale 12.12 mầm – Cứu tóc 7 ngày, combo đủ bộ 5 món giảm 14%, voucher 12.12, freeship từ 249K" width={1500} height={750} sizes="(max-width: 1280px) 100vw, 1240px" />
+            <span className="campaign-sheen" aria-hidden="true" />
+          </Link>
+        </Reveal>
+        <div className="campaign-spotlight-bar">
+          <div className="campaign-spotlight-copy">
+            <span className="campaign-badge"><Sparkles size={13} /> Siêu Sale 12.12 · {campaign1212.period}</span>
+            <h2 className="font-display" id="campaign-spotlight-title">Đủ bộ 5 món, <em>giảm ngay 14%.</em></h2>
+          </div>
+          <CampaignCountdown startsAt={campaign1212.startsAt} endsAt={campaign1212.endsAt} />
+          <div className="campaign-spotlight-actions">
+            <MagneticLink className="button-primary" href="/san-pham/combo-du-bo-5-mon">Săn combo <ArrowRight size={16} /></MagneticLink>
+            <a className="text-link" href="#uu-dai-12-12">Xem mọi ưu đãi <ArrowDown size={15} /></a>
+          </div>
+        </div>
+      </section>
+
       <section className="section-products page-shell" id="san-pham-noi-bat">
         <div className="products-heading">
           <SectionTitle eyebrow="Được nâng niu mỗi ngày" title="Những mầm xanh bán chạy" description="Chăm sóc tóc thật lành, bắt đầu từ những lựa chọn giản dị." />
@@ -85,6 +115,41 @@ export default function HomePage() {
               </Link>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="rescue-campaign" aria-labelledby="rescue-campaign-title">
+        <div className="page-shell">
+          <div className="rescue-heading">
+            <div>
+              <span className="eyebrow eyebrow-light">Chiến dịch · Cứu tóc 7 ngày</span>
+              <h2 className="font-display" id="rescue-campaign-title">Chăm tóc sớm,<br /><em>tự tin đón Tết.</em></h2>
+            </div>
+            <div className="rescue-heading-side">
+              <p>Một tuần nâng niu trọn vẹn với đủ 5 bước thảo mộc — để mái tóc sẵn sàng rạng rỡ cho những ngày sum vầy.</p>
+              <Link className="button-light" href="/san-pham/combo-du-bo-5-mon">Nhận combo đủ bộ <ArrowRight size={16} /></Link>
+            </div>
+          </div>
+          <Reveal>
+            <Link href="/san-pham/combo-du-bo-5-mon" className="rescue-banner" aria-label="Xem combo đủ bộ 5 món – Cứu tóc 7 ngày">
+              <Image src="/images/banner/banner-chien-dich.png" alt="Chiến dịch Cứu tóc 7 ngày của mầm: chăm tóc sớm, tự tin đón Tết, combo đủ bộ 5 món giảm 14% từ 06 đến 19/12/2026" width={1500} height={750} sizes="(max-width: 1280px) 100vw, 1240px" />
+              <span className="campaign-sheen" aria-hidden="true" />
+            </Link>
+          </Reveal>
+          <ol className="rescue-steps">
+            {rescueSteps.map(([name, note, slug], index) => (
+              <Reveal key={slug} delay={index * 60}>
+                <li>
+                  <Link href={`/san-pham/${slug}`}>
+                    <span className="rescue-step-number">0{index + 1}</span>
+                    <strong>{name}</strong>
+                    <small>{note}</small>
+                    <ArrowUpRight className="rescue-step-arrow" size={15} />
+                  </Link>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -156,11 +221,7 @@ export default function HomePage() {
       <ProductHotspots />
       <TestimonialsMarquee />
 
-      <section className="shopee-banner page-shell">
-        <div className="shopee-mark"><Image src="/images/brand/logo-mark-light.png" alt="Biểu trưng mầm" fill sizes="96px" /></div>
-        <div><span className="eyebrow eyebrow-light">Ghé khu vườn của mầm</span><h2 className="font-display">Gặp mầm trên Shopee</h2><p>Chọn món thương bạn, mầm gói ghém gửi đến tận nhà.</p></div>
-        <a className="button-light" href={socialLinks.find((social) => social.platform === "shopee")?.href ?? "https://shopee.vn/bennphuc"} target="_blank" rel="noreferrer">Ghé gian hàng <ArrowUpRight size={16} /></a>
-      </section>
+      <SocialFollow />
 
       <section className="faq-section page-shell">
         <div className="faq-heading"><SectionTitle eyebrow="Bạn hỏi, mầm thưa" title="Một vài điều bạn muốn biết" description="Cùng tìm hiểu kỹ hơn trước khi chọn sản phẩm cho mái tóc." /><Link className="text-link" href="/lien-he">Mình cần tư vấn <ArrowRight size={15} /></Link></div>
