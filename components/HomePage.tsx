@@ -14,6 +14,7 @@ import ProductHotspots from "@/components/ProductHotspots";
 import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 import { socialLinks } from "@/data/site";
 import { products } from "@/data/products";
+import { campaign1212 } from "@/data/homepage";
 
 const ingredients = [
   ["Bưởi", "Hương thơm tươi mát, quen thuộc trong nếp chăm tóc Việt."],
@@ -72,6 +73,19 @@ export default function HomePage() {
           <Link className="text-link" href="/san-pham">Xem tất cả sản phẩm <ArrowUpRight size={16} /></Link>
         </div>
         <div className="product-grid">{bestsellers.map((product, index) => <Reveal key={product.id} delay={index * 70}><ProductCard product={product} /></Reveal>)}</div>
+      </section>
+
+      <section className="section-products page-shell" id="uu-dai-12-12">
+        <SectionTitle eyebrow={`Ưu đãi 12.12 · ${campaign1212.period}`} title="Mầm ưu đãi 12.12" description="Chọn món chăm tóc yêu thích, hoặc gom cả bộ để tiết kiệm hơn." />
+        <div className="product-grid">
+          {campaign1212.items.map((item, index) => (
+            <Reveal key={item.href} delay={index * 60}>
+              <Link href={item.href} className="campaign-card">
+                <Image src={item.image} alt={item.alt} width={1080} height={1080} sizes="(max-width: 768px) 100vw, 33vw" />
+              </Link>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       <PackageSelector />

@@ -4577,3 +4577,25 @@ button {
     transition: none;
   }
 }
+
+.campaign-card {
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.campaign-card img {
+  width: 100%;
+  height: auto;
+}
+
+.campaign-card:hover {
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .campaign-card {
+    transition: none;
+  }
+}
