@@ -25,7 +25,7 @@ export const products: Product[] = [
     volume: "300ml",
     price: 159000,
     comparePrice: 189000,
-    images: ["/images/dau-goi-thao-moc.png"],
+    images: ["/images/dau-goi-thao-moc.png", "/images/products/dau-goi-cach-dung.png"],
     shortDesc: "Làm sạch dịu nhẹ cùng bưởi, bồ kết và hương nhu.",
     benefits: [
       "Giúp tóc sạch thoáng, giảm cảm giác bết dính",
@@ -46,7 +46,7 @@ export const products: Product[] = [
     volume: "200ml",
     price: 139000,
     comparePrice: 169000,
-    images: ["/images/dau-xa.png"],
+    images: ["/images/dau-xa.png", "/images/products/dau-xa-cach-dung.png"],
     shortDesc: "Nâng niu thân tóc, cho mái tóc mềm mượt dễ chải.",
     benefits: [
       "Bổ sung độ ẩm cho thân tóc",
@@ -67,7 +67,7 @@ export const products: Product[] = [
     volume: "200ml",
     price: 189000,
     comparePrice: 229000,
-    images: ["/images/kem-u-toc.png"],
+    images: ["/images/kem-u-toc.png", "/images/products/kem-u-cach-dung.png"],
     shortDesc: "Chăm sóc sâu với dầu dừa, bơ hạt mỡ và lô hội.",
     benefits: [
       "Dưỡng sâu cho mái tóc cần được chăm sóc",
@@ -88,7 +88,7 @@ export const products: Product[] = [
     volume: "50ml",
     price: 219000,
     comparePrice: 259000,
-    images: ["/images/serum.png"],
+    images: ["/images/serum.png", "/images/products/serum-cach-dung.png"],
     shortDesc: "Bước dưỡng nhẹ tênh cho mái tóc thêm chắc khỏe.",
     benefits: [
       "Hỗ trợ chăm sóc tóc khô xơ",
@@ -109,7 +109,7 @@ export const products: Product[] = [
     volume: "150ml",
     price: 169000,
     comparePrice: 199000,
-    images: ["/images/xit-duong-toc.png"],
+    images: ["/images/xit-duong.png", "/images/products/xit-duong-cach-dung.png"],
     shortDesc: "Dưỡng tóc nhanh gọn cùng hương bưởi nhẹ nhàng.",
     benefits: [
       "Nuôi dưỡng và bảo vệ mái tóc mỗi ngày",
@@ -160,7 +160,7 @@ export const products: Product[] = [
     volume: "5 sản phẩm",
     price: 749000,
     comparePrice: 975000,
-    images: ["/images/dau-goi-thao-moc.png", "/images/xit-duong-toc.png"],
+    images: ["/images/products/box-5-product.png"],
     shortDesc: "Nâng niu mái tóc với đầy đủ 5 món chăm sóc từ mầm.",
     benefits: ["Đầy đủ 5 sản phẩm chăm sóc tóc", "Linh hoạt theo nhu cầu từng ngày", "Kết hợp làm sạch và dưỡng tóc", "Dễ dàng tạo thói quen chăm sóc", "Tiết kiệm hơn khi chọn trọn bộ"],
     ingredients: ["Bưởi", "Bồ kết", "Hương nhu", "Dầu dừa", "Lô hội", "Hà thủ ô"],
@@ -175,7 +175,7 @@ export const products: Product[] = [
     volume: "3 sản phẩm",
     price: 299000,
     comparePrice: 557000,
-    images: ["/images/dau-goi-thao-moc.png", "/images/xit-duong-toc.png"],
+    images: ["/images/dau-goi-thao-moc.png", "/images/xit-duong.png"],
     shortDesc: "Bộ đôi gội xả kèm xịt dưỡng tóc 150ml.",
     benefits: ["Có đủ bước gội, xả và dưỡng tóc", "Xịt dưỡng tiện dùng mỗi ngày", "Hương bưởi nhẹ nhàng", "Chăm sóc tóc khô xơ", "Ưu đãi theo bộ tiết kiệm hơn"],
     ingredients: ["Bưởi", "Bồ kết", "Hương nhu", "Hà thủ ô"],
