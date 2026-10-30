@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { campaigns } from "@/data/campaigns";
 import { products } from "@/data/products";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -14,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return [
     ...pages.map((path) => ({ url: `${baseUrl}${path}`, changeFrequency: "monthly" as const, priority: path ? 0.7 : 1 })),
+    ...campaigns.map((campaign) => ({ url: `${baseUrl}/chien-dich/${campaign.slug}`, changeFrequency: "weekly" as const, priority: 0.9 })),
     ...products.map((product) => ({ url: `${baseUrl}/san-pham/${product.slug}`, changeFrequency: "weekly" as const, priority: 0.8 })),
   ];
 }

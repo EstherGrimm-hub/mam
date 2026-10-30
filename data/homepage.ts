@@ -51,21 +51,6 @@ export const promoSlides = [
   { image: "/images/banner/banner-serum.png", alt: "Serum tóc mầm chăm sóc tóc hằng ngày", href: "/san-pham/serum-toc", label: "Khám phá serum" },
 ];
 
-export const campaign1212 = {
-  period: "06–19/12",
-  startsAt: "2026-12-06T00:00:00+07:00",
-  endsAt: "2026-12-19T23:59:59+07:00",
-  items: [
-    { image: "/images/products/dau-goi-uu-dai.png", alt: "Poster ưu đãi 12.12 dầu gội thảo mộc mầm", href: "/san-pham/dau-goi-thao-moc" },
-    { image: "/images/products/dau-xa-uu-dai.png", alt: "Poster ưu đãi 12.12 dầu xả mầm", href: "/san-pham/dau-xa-phuc-hoi-mem-muot" },
-    { image: "/images/products/kem-u-toc-uu-dai.png", alt: "Poster ưu đãi 12.12 kem ủ tóc mầm", href: "/san-pham/kem-u-toc" },
-    { image: "/images/products/serum-uu-dai.png", alt: "Poster ưu đãi 12.12 serum tóc mầm", href: "/san-pham/serum-toc" },
-    { image: "/images/products/xit-duong-uu-dai.png", alt: "Poster ưu đãi 12.12 xịt dưỡng tóc mầm", href: "/san-pham/xit-duong-toc" },
-    { image: "/images/products/combo-2-uu-dai.png", alt: "Poster ưu đãi 12.12 combo gội và xả tặng xịt dưỡng", href: "/san-pham/combo-goi-xa-tang-xit-duong" },
-    { image: "/images/products/combo-5-uu-dai.png", alt: "Poster ưu đãi 12.12 combo đủ bộ 5 món", href: "/san-pham/combo-du-bo-5-mon" },
-  ],
-};
-
 // TODO: thay bằng đánh giá đã được khách hàng cho phép sử dụng.
 export const SHOW_TESTIMONIALS = false;
 export const sampleTestimonials = [

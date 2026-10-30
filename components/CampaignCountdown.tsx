@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 
 type CampaignCountdownProps = {
+  name: string;
   startsAt: string;
   endsAt: string;
 };
@@ -14,13 +15,13 @@ function subscribe(onTick: () => void) {
 
 const getNowInSeconds = () => Math.floor(Date.now() / 1000);
 
-export default function CampaignCountdown({ startsAt, endsAt }: CampaignCountdownProps) {
+export default function CampaignCountdown({ name, startsAt, endsAt }: CampaignCountdownProps) {
   const now = useSyncExternalStore(subscribe, getNowInSeconds, () => null);
   const start = Math.floor(new Date(startsAt).getTime() / 1000);
   const end = Math.floor(new Date(endsAt).getTime() / 1000);
 
   if (now !== null && now > end) {
-    return <div className="campaign-countdown is-ended"><span className="campaign-countdown-label">Ưu đãi 12.12 đã khép lại — hẹn bạn mùa sau</span></div>;
+    return <div className="campaign-countdown is-ended"><span className="campaign-countdown-label">{name} đã khép lại — hẹn bạn mùa sau</span></div>;
   }
 
   const isLive = now !== null && now >= start;

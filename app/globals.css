@@ -877,6 +877,59 @@ button {
   letter-spacing: 0.035em;
 }
 
+.announcement-default,
+.announcement-campaign {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.announcement-campaign {
+  padding-left: 14px;
+  border-left: 1px solid rgba(241, 232, 212, 0.3);
+  margin-left: 7px;
+  color: #e7c978;
+  font-weight: 700;
+}
+
+.announcement-campaign u {
+  color: #f1e8d4;
+  text-underline-offset: 3px;
+}
+
+.announcement-campaign:hover u {
+  color: #e7c978;
+}
+
+.nav-campaign {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-nav a.nav-campaign {
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e7c978, #c9a14a);
+  box-shadow: 0 8px 20px -12px rgba(150, 110, 30, 0.9);
+  color: #2b3a1f;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.main-nav a.nav-campaign:hover {
+  color: #2b3a1f;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -12px rgba(150, 110, 30, 1);
+}
+
+.nav-campaign i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d0533b;
+  animation: campaign-pulse 1.6s ease-out infinite;
+}
+
 .site-header {
   position: relative;
   z-index: 20;
@@ -1735,6 +1788,16 @@ button {
   .announcement {
     min-height: 29px;
     font-size: 0.58rem;
+  }
+
+  .announcement-default:has(+ .announcement-campaign) {
+    display: none;
+  }
+
+  .announcement-campaign {
+    padding-left: 0;
+    border-left: 0;
+    margin-left: 0;
   }
 
   .header-inner {
@@ -3841,6 +3904,21 @@ button {
     animation-delay: calc(90ms + var(--menu-index, 0) * 70ms);
   }
 
+  .main-nav a.nav-campaign {
+    align-items: center;
+    padding: 15px 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    color: #e7c978;
+    font-style: italic;
+  }
+
+  .main-nav a.nav-campaign i {
+    width: 10px;
+    height: 10px;
+  }
+
   .main-nav a span {
     color: #c5d2b6;
     font-family: var(--font-vietnam), sans-serif;
@@ -4611,6 +4689,7 @@ button {
   text-transform: uppercase;
 }
 
+.campaign-spotlight-copy h1,
 .campaign-spotlight-copy h2 {
   margin: 10px 0 0;
   color: var(--ink);
@@ -4619,6 +4698,7 @@ button {
   line-height: 1.1;
 }
 
+.campaign-spotlight-copy h1 em,
 .campaign-spotlight-copy h2 em {
   color: var(--clay);
   font-style: italic;
@@ -4798,6 +4878,85 @@ button {
 .rescue-steps a:hover .rescue-step-arrow {
   opacity: 1;
   transform: translate(2px, -2px);
+}
+
+/* Landing page chiến dịch */
+.campaign-landing-hero {
+  padding-top: 28px;
+}
+
+.campaign-landing-hero > .back-link {
+  margin-bottom: 18px;
+}
+
+.campaign-landing-intro {
+  max-width: 620px;
+  margin: 44px auto 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.campaign-perks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.campaign-perks li {
+  display: grid;
+  gap: 6px;
+  height: 100%;
+  padding: 22px 22px 20px;
+  border: 1px solid rgba(201, 161, 74, 0.35);
+  border-radius: 18px;
+  background: rgba(251, 246, 233, 0.7);
+  text-align: center;
+}
+
+.campaign-perks strong {
+  color: var(--clay);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.campaign-perks span {
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.6;
+}
+
+.campaign-landing-cta {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding-top: 88px;
+  padding-bottom: 96px;
+  text-align: center;
+}
+
+.campaign-landing-cta h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.campaign-landing-cta p {
+  max-width: 520px;
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.campaign-landing-cta .hero-actions {
+  justify-content: center;
+  margin-top: 0;
 }
 
 /* Theo dõi mầm */
@@ -4982,8 +5141,32 @@ button {
     text-align: center;
   }
 
+  .campaign-spotlight-copy h1,
   .campaign-spotlight-copy h2 {
     font-size: 1.4rem;
+  }
+
+  .campaign-perks {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .campaign-landing-intro {
+    margin-top: 32px;
+  }
+
+  .campaign-landing-cta {
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
+
+  .campaign-landing-cta h2 {
+    font-size: 1.7rem;
+  }
+
+  .campaign-landing-cta .hero-actions {
+    flex-direction: column;
+    gap: 16px;
   }
 
   .campaign-spotlight-actions {
@@ -5037,7 +5220,8 @@ button {
 
 @media (prefers-reduced-motion: reduce) {
   .campaign-sheen,
-  .campaign-countdown-label i {
+  .campaign-countdown-label i,
+  .nav-campaign i {
     animation: none;
   }
 

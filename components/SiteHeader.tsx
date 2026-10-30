@@ -2,10 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Leaf, Menu, ShoppingBag, X } from "lucide-react";
+import { ArrowRight, Leaf, Menu, ShoppingBag, Sparkles, X } from "lucide-react";
 import { useCart } from "@/components/CartProvider";
 import CartDrawer from "@/components/CartDrawer";
 import Logo from "@/components/Logo";
+import { featuredCampaign } from "@/data/campaigns";
+
+const campaignHref = featuredCampaign ? `/chien-dich/${featuredCampaign.slug}` : null;
 
 const links = [
   { href: "/san-pham", label: "Sản phẩm" },
@@ -54,8 +57,12 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <div className="announcement">
-        <Leaf size={13} aria-hidden="true" />
-        <span>Miễn phí vận chuyển cho đơn hàng từ 249.000đ</span>
+        <span className="announcement-default"><Leaf size={13} aria-hidden="true" /> Miễn phí vận chuyển cho đơn hàng từ 249.000đ</span>
+        {featuredCampaign && campaignHref && (
+          <Link className="announcement-campaign" href={campaignHref}>
+            <Sparkles size={12} aria-hidden="true" /> {featuredCampaign.name} · {featuredCampaign.period} <u>Xem ngay</u> <ArrowRight size={12} aria-hidden="true" />
+          </Link>
+        )}
       </div>
       <div className="header-inner page-shell">
         <Logo variant="dark" height={34} className="header-logo" />
@@ -65,8 +72,13 @@ export default function SiteHeader() {
               <Logo variant="light" height={42} />
               <button className="menu-close" type="button" onClick={() => setIsMenuOpen(false)} aria-label="Đóng menu"><X size={22} /></button>
             </div>
+            {featuredCampaign && campaignHref && (
+              <Link className="nav-campaign" href={campaignHref} style={{ "--menu-index": 0 } as React.CSSProperties} onClick={() => setIsMenuOpen(false)}>
+                <i aria-hidden="true" /> {featuredCampaign.name}
+              </Link>
+            )}
             {links.map((link, index) => (
-              <Link key={link.href} href={link.href} style={{ "--menu-index": index } as React.CSSProperties} onClick={() => setIsMenuOpen(false)}>
+              <Link key={link.href} href={link.href} style={{ "--menu-index": index + (featuredCampaign ? 1 : 0) } as React.CSSProperties} onClick={() => setIsMenuOpen(false)}>
                 {link.label}
               </Link>
             ))}
